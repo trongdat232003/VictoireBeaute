@@ -39,6 +39,30 @@ npm run preview
 
 Mở trình duyệt và truy cập: `http://localhost:5173`
 
+## 🌐 Deploy Lên Vercel
+
+### Cách Nhanh Nhất
+
+1. **Push code lên GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/YOUR_USERNAME/victoire-beaute.git
+   git push -u origin main
+   ```
+
+2. **Deploy trên Vercel**
+   - Truy cập: https://vercel.com
+   - Login bằng GitHub
+   - Click "Add New..." → "Project"
+   - Import repository "victoire-beaute"
+   - Click "Deploy"
+
+3. **Done!** Website live tại: `https://victoire-beaute.vercel.app`
+
+📖 **Chi tiết**: Xem [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) hoặc [QUICK_DEPLOY.md](./QUICK_DEPLOY.md)
+
 ## 📁 Cấu Trúc Dự Án
 
 ```
@@ -77,6 +101,9 @@ Dự án sử dụng kiến trúc **Component-Based** với các nguyên tắc:
 
 - [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) - Chi tiết về cấu trúc dự án
 - [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) - Hướng dẫn phát triển và thêm tính năng
+- [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) - Hướng dẫn deploy chi tiết
+- [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) - Deploy nhanh trong 5 phút
+- [COMPLETED_FEATURES.md](./COMPLETED_FEATURES.md) - Danh sách tính năng đã hoàn thành
 
 ## 🎯 Roadmap
 
@@ -108,3 +135,17 @@ This project is licensed under the MIT License.
 - Design inspiration from modern e-commerce platforms
 - Material Design color system
 - Google Fonts & Material Symbols
+
+---
+
+## 📊 Project Stats
+
+- **Total Pages**: 15
+- **Total Components**: 12
+- **Total Routes**: 15
+- **Mock Products**: 8
+- **Lines of Code**: 3,000+
+
+---
+
+**Made with ❤️ using React + Vite + Tailwind CSS**
