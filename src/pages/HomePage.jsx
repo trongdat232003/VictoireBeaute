@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/common/ProductCard';
 import Button from '../components/common/Button';
+import { products } from '../data/products';
+import { categories } from '../data/categories';
 
-const HomePage = ({ products, onAddToCart }) => {
-  const bestSellers = products.filter(p => p.badge === 'BEST SELLER');
+const HomePage = ({ onAddToCart }) => {
+  const bestSellers = products.filter(p => p.badge === 'BÁN CHẠY');
+  const trendingCategories = categories.slice(0, 3); // Lấy 3 danh mục đầu tiên
 
   return (
     <div className="pb-16">
@@ -44,53 +47,56 @@ const HomePage = ({ products, onAddToCart }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+          {/* First category - larger */}
           <Link
-            to="/skincare"
+            to={`/category/${trendingCategories[0].slug}`}
             className="group relative rounded-xl overflow-hidden md:col-span-2 md:row-span-2 shadow-sm hover:shadow-md transition-shadow"
           >
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4hVrfZoIz_gCZeCub2CuR23MoTB3UrrVKgXgAU453mAtuT0KyzrC6-S2ssw9ynIknDLzUF48qWvCJEAZn5-WHZgZEDBQtT5IFBRsp-qsMSj0XPs8nv4rKVEq94Zc6On6mzUeoAp2iyb0i8DReV_AQ0DjGB8K9hNoLajJd34ZHFhwPW8sKifB4kzJ4nhjj1cXZehPpIEizAbUff_aR6IGVOVbKngEhqdh2XV5VAWnDylHPK5M-LSvAjRcWLC90UoXmqXLDc6vRFg"
-              alt="Skincare"
+              src={trendingCategories[0].image}
+              alt={trendingCategories[0].name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-8 w-full">
-              <h3 className="font-title-lg text-title-lg text-on-primary mb-2">Chăm Sóc Da</h3>
+              <h3 className="font-title-lg text-title-lg text-on-primary mb-2">{trendingCategories[0].name}</h3>
               <p className="font-body-sm text-body-sm text-surface-container-highest group-hover:text-primary-fixed-dim transition-colors">
-                Nuôi dưỡng làn da từ sâu bên trong
+                {trendingCategories[0].description}
               </p>
             </div>
           </Link>
 
+          {/* Second category */}
           <Link
-            to="/makeup"
+            to={`/category/${trendingCategories[1].slug}`}
             className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoGWsS5pwkNE01hXFSb7c3tZ77prJG1lUucQsOmSwkmheJFFNV48RUWzvg3Q_0XZValUmi_JyJ-RqNODiUDhcJ5xEIO2QYvxI00kW-jahvdqQjJftAyKLj4p_JG-1KPoLkw1IOAt_EeQRaJ4MJ-LUQBdY51ATP6FWaiE1nuABcfquNsEeGnMF-kU-_psXVrXjPhLNqJpdR_4MdnzNrmIEXYmN-CH-jxDVr3ZcIcFcKuwEiFUbKs-5l3wCloDtc4f8zJdL3DaQ40g"
-              alt="Makeup"
+              src={trendingCategories[1].image}
+              alt={trendingCategories[1].name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-6 w-full">
-              <h3 className="font-title-lg text-title-lg text-on-primary mb-1">Trang Điểm</h3>
-              <p className="font-body-sm text-body-sm text-surface-container-highest">Tỏa sáng phong cách riêng</p>
+              <h3 className="font-title-lg text-title-lg text-on-primary mb-1">{trendingCategories[1].name}</h3>
+              <p className="font-body-sm text-body-sm text-surface-container-highest">{trendingCategories[1].description}</p>
             </div>
           </Link>
 
+          {/* Third category */}
           <Link
-            to="/fragrance"
+            to={`/category/${trendingCategories[2].slug}`}
             className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-OlFCVbLeNne4UhEABYyd28JgRn34JeL9X4lrwc1u4Ch7viHzaCbTI3X1_KD8EM2BA3KkMY61VRj78QQBTMC1Nis2d6az2QDsnd5eHkyr11Xbsku8ROf4u_-ZpYikhDCMe-fm5OZ_dsBkuqRYlZ5vq8f_ZIs0qvlLVb2MRL7qUUw_PM8vYO3QpxPExDaMZCCheXYk4N_R8HsXAdZuFbWsnVP7V3RGwGvBOEujH9EugU68SvLFg3IQeyvu-fREiOR8Zjs9PpIHA"
-              alt="Fragrance"
+              src={trendingCategories[2].image}
+              alt={trendingCategories[2].name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-6 w-full">
-              <h3 className="font-title-lg text-title-lg text-on-primary mb-1">Nước Hoa</h3>
-              <p className="font-body-sm text-body-sm text-surface-container-highest">Dấu ấn khó phai</p>
+              <h3 className="font-title-lg text-title-lg text-on-primary mb-1">{trendingCategories[2].name}</h3>
+              <p className="font-body-sm text-body-sm text-surface-container-highest">{trendingCategories[2].description}</p>
             </div>
           </Link>
         </div>

@@ -1,16 +1,17 @@
 // Navigation menu items
 export const mainNavigation = [
-  { label: 'New Arrivals', path: '/new-arrivals' },
-  { label: 'Skincare', path: '/skincare' },
-  { label: 'Makeup', path: '/makeup' },
-  { label: 'Wellness', path: '/wellness' },
-  { label: 'Gift Sets', path: '/gift-sets' },
+  { label: 'Danh Mục', path: '/categories' },
+  { label: 'Hàng Mới', path: '/new-arrivals' },
+  { label: 'Chăm Sóc Da', path: '/category/cham-soc-da-mat' },
+  { label: 'Trang Điểm', path: '/category/trang-diem' },
+  { label: 'Sức Khỏe', path: '/wellness' },
+  { label: 'Bộ Quà Tặng', path: '/gift-sets' },
 ];
 
 export const footerLinks = [
-  { label: 'About Us', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-  { label: 'Shipping & Returns', path: '/shipping' },
-  { label: 'Privacy Policy', path: '/privacy' },
-  { label: 'Sustainability', path: '/sustainability' },
+  { label: 'Về Chúng Tôi', path: '/about' },
+  { label: 'Liên Hệ', path: '/contact' },
+  { label: 'Vận Chuyển & Đổi Trả', path: '/shipping' },
+  { label: 'Chính Sách Bảo Mật', path: '/privacy' },
+  { label: 'Phát Triển Bền Vững', path: '/sustainability' },
 ];

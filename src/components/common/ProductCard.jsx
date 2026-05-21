@@ -5,7 +5,7 @@ const ProductCard = ({ product, onAddToCart }) => {
   const { id, name, description, price, image, badge, rating, reviewCount } = product;
 
   return (
-    <div className="group bg-surface rounded-xl p-4 shadow-sm hover:-translate-y-1 transition-transform duration-300 relative">
+    <div className="group bg-surface rounded-xl p-4 shadow-sm hover:-translate-y-1 transition-transform duration-300 relative flex flex-col h-full">
       {badge && (
         <div className="absolute top-4 left-4 z-10 bg-primary-fixed-dim text-on-primary-fixed px-3 py-1 rounded-full font-label-caps text-label-caps uppercase">
           {badge}
@@ -17,7 +17,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       </button>
 
       <Link to={`/product/${id}`}>
-        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg mb-4 bg-surface-container">
+        <div className="aspect-square w-full overflow-hidden rounded-lg mb-4 bg-surface-container">
           <img
             src={image}
             alt={name}
@@ -26,7 +26,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         </div>
       </Link>
 
-      <div className="text-center">
+      <div className="text-center flex-1 flex flex-col">
         {rating && (
           <div className="flex items-center justify-center gap-1 mb-1 text-primary">
             {[...Array(5)].map((_, i) => (
@@ -41,13 +41,13 @@ const ProductCard = ({ product, onAddToCart }) => {
         )}
         
         <Link to={`/product/${id}`}>
-          <h3 className="font-title-lg text-title-lg text-on-surface mb-1 truncate hover:text-primary">
+          <h3 className="font-title-lg text-title-lg text-on-surface mb-1 line-clamp-2 hover:text-primary min-h-[3rem]">
             {name}
           </h3>
         </Link>
         
-        <p className="font-body-sm text-body-sm text-on-surface-variant mb-3">{description}</p>
-        <p className="font-body-lg text-body-lg font-bold text-primary">{formatPrice(price)}</p>
+        <p className="font-body-sm text-body-sm text-on-surface-variant mb-3 line-clamp-2 min-h-[2.5rem]">{description}</p>
+        <p className="font-body-lg text-body-lg font-bold text-primary mt-auto">{formatPrice(price)}</p>
       </div>
 
       <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -56,27 +56,27 @@ const Footer = () => {
           <ul className="space-y-3">
             <li>
               <Link to="/about" className="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline transition-all cursor-pointer">
-                About Us
+                Về Chúng Tôi
               </Link>
             </li>
             <li>
               <Link to="/contact" className="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline transition-all cursor-pointer">
-                Contact
+                Liên Hệ
               </Link>
             </li>
             <li>
               <Link to="/shipping" className="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline transition-all cursor-pointer">
-                Shipping & Returns
+                Vận Chuyển & Đổi Trả
               </Link>
             </li>
             <li>
               <Link to="/privacy" className="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline transition-all cursor-pointer">
-                Privacy Policy
+                Chính Sách Bảo Mật
               </Link>
             </li>
             <li>
               <Link to="/sustainability" className="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline transition-all cursor-pointer">
-                Sustainability
+                Phát Triển Bền Vững
               </Link>
             </li>
           </ul>

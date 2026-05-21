@@ -1,8 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
+import ScrollToTop from './components/common/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import CartPage from './pages/CartPage';
+import CategoryPage from './pages/CategoryPage';
+import AllCategoriesPage from './pages/AllCategoriesPage';
 import NewArrivalsPage from './pages/NewArrivalsPage';
 import SkincarePage from './pages/SkincarePages';
 import MakeupPage from './pages/MakeupPage';
@@ -15,19 +18,24 @@ import PrivacyPage from './pages/PrivacyPage';
 import SustainabilityPage from './pages/SustainabilityPage';
 import ShippingPage from './pages/ShippingPage';
 import useCart from './hooks/useCart';
-import { products } from './constants/mockData';
 
 function App() {
   const { cartItems, addToCart, updateQuantity, removeFromCart, cartItemCount } = useCart();
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout cartItemCount={cartItemCount} />}>
           {/* Main Pages */}
-          <Route index element={<HomePage products={products} onAddToCart={addToCart} />} />
-          <Route path="products" element={<ProductsPage products={products} onAddToCart={addToCart} />} />
+          <Route index element={<HomePage onAddToCart={addToCart} />} />
+          <Route path="products" element={<ProductsPage onAddToCart={addToCart} />} />
           <Route path="cart" element={<CartPage cartItems={cartItems} onUpdateQuantity={updateQuantity} onRemoveItem={removeFromCart} />} />
+          
+          {/* Categories */}
+          <Route path="categories" element={<AllCategoriesPage />} />
+          <Route path="category/:categorySlug" element={<CategoryPage onAddToCart={addToCart} />} />
+          <Route path="category/:categorySlug/:subcategorySlug" element={<CategoryPage onAddToCart={addToCart} />} />
           
           {/* Category Pages */}
           <Route path="new-arrivals" element={<NewArrivalsPage />} />
