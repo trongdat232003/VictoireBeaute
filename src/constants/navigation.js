@@ -1,11 +1,11 @@
 // Navigation menu items
 export const mainNavigation = [
-  { label: 'Danh Mục', path: '/categories' },
-  { label: 'Hàng Mới', path: '/new-arrivals' },
-  { label: 'Chăm Sóc Da', path: '/category/cham-soc-da-mat' },
-  { label: 'Trang Điểm', path: '/category/trang-diem' },
-  { label: 'Sức Khỏe', path: '/wellness' },
-  { label: 'Bộ Quà Tặng', path: '/gift-sets' },
+  { label: 'Danh Mục', path: '/categories', icon: 'category' },
+  { label: 'Hàng Mới', path: '/new-arrivals', icon: 'new_releases' },
+  { label: 'Chăm Sóc Da', path: '/category/cham-soc-da-mat', icon: 'spa' },
+  { label: 'Trang Điểm', path: '/category/trang-diem', icon: 'palette' },
+  { label: 'Sức Khỏe', path: '/wellness', icon: 'favorite' },
+  { label: 'Bộ Quà Tặng', path: '/gift-sets', icon: 'redeem' },
 ];
 
 export const footerLinks = [

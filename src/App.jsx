@@ -3,6 +3,7 @@ import MainLayout from './components/layout/MainLayout';
 import ScrollToTop from './components/common/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
 import AllCategoriesPage from './pages/AllCategoriesPage';
@@ -30,6 +31,7 @@ function App() {
           {/* Main Pages */}
           <Route index element={<HomePage onAddToCart={addToCart} />} />
           <Route path="products" element={<ProductsPage onAddToCart={addToCart} />} />
+          <Route path="product/:productId" element={<ProductDetailPage onAddToCart={addToCart} />} />
           <Route path="cart" element={<CartPage cartItems={cartItems} onUpdateQuantity={updateQuantity} onRemoveItem={removeFromCart} />} />
           
           {/* Categories */}
